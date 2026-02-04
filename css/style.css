@@ -601,6 +601,46 @@ p {
     margin: 0 auto;
 }
 
+/* Grid para 4 planos */
+.planos-grid.planos-4 {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1400px;
+    gap: 24px;
+}
+
+/* Badge de duração do plano */
+.plano-duracao-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(212, 175, 55, 0.15);
+    color: var(--accent-gold);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: var(--border-radius-full);
+    margin-bottom: 16px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* Card do Plano 360 */
+.plano-card.plano-360 {
+    background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, var(--secondary-dark) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.plano-card.plano-360:hover {
+    border-color: var(--accent-gold);
+    box-shadow: 0 20px 60px rgba(212, 175, 55, 0.15);
+}
+
+/* Badge 360 */
+.badge-popular.badge-360 {
+    background: linear-gradient(135deg, #D4AF37 0%, #8B7025 100%);
+    font-size: 0.65rem;
+    padding: 6px 12px;
+}
+
 .plano-card {
     background: var(--secondary-dark);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1368,6 +1408,16 @@ p {
     .antes-depois-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    /* Grid de 4 planos em tablet: 2 colunas */
+    .planos-grid.planos-4 {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 900px;
+    }
+
+    .planos-page-grid.planos-4-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* ===================================
@@ -1451,6 +1501,18 @@ p {
     }
 
     .planos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .planos-grid.planos-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .planos-page-grid.planos-4-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .plano-destaque-info ul {
         grid-template-columns: 1fr;
     }
 
@@ -1626,6 +1688,124 @@ p {
     gap: 40px;
     max-width: 1000px;
     margin: 0 auto;
+}
+
+/* Grid para 4 planos na página de planos */
+.planos-page-grid.planos-4-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1400px;
+    gap: 32px;
+}
+
+/* Badge de duração do plano na página */
+.plano-badge-duracao {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(212, 175, 55, 0.15);
+    color: var(--accent-gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: var(--border-radius-full);
+    margin-bottom: 16px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* Seção "Para quem é" */
+.plano-para-quem {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.plano-para-quem h4 {
+    color: var(--accent-gold);
+    font-size: 1rem;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.plano-para-quem ul {
+    list-style: none;
+    padding: 0;
+}
+
+.plano-para-quem li {
+    padding: 8px 0;
+    color: var(--text-gray-light);
+    font-size: 0.875rem;
+}
+
+/* Observações do plano */
+.plano-observacoes {
+    margin-top: 24px;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: var(--border-radius);
+    border-left: 3px solid var(--accent-gold);
+}
+
+.plano-observacoes p {
+    color: var(--text-gray);
+    font-size: 0.8125rem;
+    margin-bottom: 8px;
+}
+
+.plano-observacoes p:last-child {
+    margin-bottom: 0;
+}
+
+.plano-observacoes .renovacao {
+    color: var(--accent-gold);
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* Destaque info do plano */
+.plano-destaque-info {
+    margin-top: 24px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.02) 100%);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.plano-destaque-info h4 {
+    color: var(--accent-gold);
+    font-size: 1rem;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.plano-destaque-info ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.plano-destaque-info li {
+    color: var(--text-gray-light);
+    font-size: 0.8125rem;
+    padding: 4px 0;
+}
+
+/* Card Premium 360 */
+.plano-page-card.plano-premium-360 {
+    background: linear-gradient(180deg, rgba(212, 175, 55, 0.1) 0%, var(--secondary-dark) 100%);
+    border: 2px solid rgba(212, 175, 55, 0.4);
+}
+
+.plano-page-card.plano-premium-360:hover {
+    border-color: var(--accent-gold);
+    box-shadow: 0 20px 60px rgba(212, 175, 55, 0.25);
+}
+
+/* Badge 360 na página */
+.badge-popular.badge-360 {
+    background: linear-gradient(135deg, #D4AF37 0%, #8B7025 100%);
 }
 
 .plano-page-card {
