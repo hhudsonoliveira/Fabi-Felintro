@@ -9,6 +9,7 @@
 // ===================================
 
 document.addEventListener('DOMContentLoaded', function() {
+    initPreloader();
     initNavbar();
     initMobileMenu();
     initSmoothScroll();
@@ -16,6 +17,24 @@ document.addEventListener('DOMContentLoaded', function() {
     initFaqAccordion();
     initAnalytics();
 });
+
+// ===================================
+// PRELOADER / ANIMAÇÃO DE ENTRADA
+// ===================================
+
+function initPreloader() {
+    const preloader = document.getElementById('preloader');
+    if (!preloader) return;
+
+    // Espera a animação do preloader e depois faz fade out
+    setTimeout(function() {
+        preloader.classList.add('fade-out');
+        // Remove do DOM após a transição
+        preloader.addEventListener('transitionend', function() {
+            preloader.remove();
+        });
+    }, 2200);
+}
 
 // ===================================
 // NAVBAR - Scroll Effect

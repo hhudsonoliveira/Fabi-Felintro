@@ -1,0 +1,8 @@
+# Robots.txt - Fabi Felintro Personal Trainer
+# https://hhudsonoliveira.github.io/Fabi-Felintro/
+
+User-agent: *
+Allow: /
+Disallow: /obrigado.html
+
+Sitemap: https://hhudsonoliveira.github.io/Fabi-Felintro/sitemap.xml
