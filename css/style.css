@@ -888,6 +888,33 @@ p {
     }
 }
 
+/* Feedback em Vídeo/Áudio */
+.feedback-videos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.feedback-video-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.feedback-video-card:hover {
+    border-color: rgba(212, 175, 55, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.feedback-video-card video {
+    width: 100%;
+    display: block;
+}
+
 /* Depoimentos */
 .depoimentos-titulo {
     text-align: center;
@@ -1517,6 +1544,10 @@ p {
 
     .carrossel-track {
         gap: 16px;
+    }
+
+    .feedback-videos-grid {
+        grid-template-columns: 1fr;
     }
 
     .depoimentos-grid {
