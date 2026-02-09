@@ -834,65 +834,58 @@ p {
 
 .resultados {
     background: var(--secondary-dark);
-}
-
-.resultados-antes-depois {
-    margin-bottom: 80px;
-}
-
-.antes-depois-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-}
-
-.antes-depois-card {
-    background: var(--card-bg);
-    border-radius: var(--border-radius);
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Carrossel Infinito */
+.carrossel-wrapper {
+    overflow: hidden;
+    width: 100%;
+    padding: 40px 0;
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.carrossel-track {
+    display: flex;
+    gap: 24px;
+    animation: carrosselScroll 60s linear infinite;
+    width: max-content;
+}
+
+.carrossel-track:hover {
+    animation-play-state: paused;
+}
+
+.carrossel-item {
+    flex-shrink: 0;
+    width: 320px;
+    height: 400px;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.1);
     transition: var(--transition-smooth);
 }
 
-.antes-depois-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(212, 175, 55, 0.3);
+.carrossel-item:hover {
+    border-color: var(--accent-gold);
+    transform: scale(1.03);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
 }
 
-.antes-depois-images {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 280px;
-    background: var(--secondary-dark);
+.carrossel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.antes-depois-images .image-placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-gray);
-    font-size: 0.875rem;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.antes-depois-images .image-placeholder:last-child {
-    border-right: none;
-}
-
-.antes-depois-info {
-    padding: 20px;
-    text-align: center;
-}
-
-.antes-depois-info h4 {
-    color: var(--text-white);
-    margin-bottom: 4px;
-}
-
-.antes-depois-info p {
-    color: var(--accent-gold);
-    font-size: 0.875rem;
-    font-weight: 500;
+@keyframes carrosselScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 /* Depoimentos */
@@ -1405,8 +1398,9 @@ p {
         gap: 40px;
     }
 
-    .antes-depois-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .carrossel-item {
+        width: 260px;
+        height: 340px;
     }
 
     /* Grid de 4 planos em tablet: 2 colunas */
@@ -1516,8 +1510,13 @@ p {
         grid-template-columns: 1fr;
     }
 
-    .antes-depois-grid {
-        grid-template-columns: 1fr;
+    .carrossel-item {
+        width: 220px;
+        height: 290px;
+    }
+
+    .carrossel-track {
+        gap: 16px;
     }
 
     .depoimentos-grid {
