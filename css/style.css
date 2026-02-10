@@ -939,10 +939,15 @@ p {
     gap: 24px;
     animation: carrosselScroll 60s linear infinite;
     width: max-content;
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
-.carrossel-track:hover {
-    animation-play-state: paused;
+@media (hover: hover) {
+    .carrossel-track:hover {
+        animation-play-state: paused;
+    }
 }
 
 .carrossel-item {
@@ -1542,6 +1547,11 @@ p {
         --section-padding: 60px;
     }
 
+    /* Fix: background-attachment fixed causa bug de animação no iOS/Safari */
+    .hero {
+        background-attachment: scroll;
+    }
+
     /* Navbar Mobile */
     .nav-menu {
         position: fixed;
@@ -1636,6 +1646,7 @@ p {
 
     .carrossel-track {
         gap: 16px;
+        animation: carrosselScroll 40s linear infinite;
     }
 
     .feedback-videos-grid {
