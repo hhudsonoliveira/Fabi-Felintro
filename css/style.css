@@ -852,50 +852,20 @@ p {
 }
 
 .video-container {
-    position: relative;
     width: 100%;
     max-width: 700px;
-    padding-bottom: min(56.25%, 394px); /* 16:9 com max */
     border-radius: var(--border-radius-lg);
     overflow: hidden;
     background: var(--secondary-dark);
     border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-.video-container iframe,
-.video-container .video-placeholder {
-    position: absolute;
-    top: 0;
-    left: 0;
+.video-container video,
+.video-container iframe {
+    display: block;
     width: 100%;
-    height: 100%;
-}
-
-.video-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--primary-black) 100%);
-    color: var(--text-gray);
-}
-
-.video-placeholder .play-icon {
-    width: 80px;
-    height: 80px;
-    background: var(--gold-gradient);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    cursor: pointer;
-    transition: var(--transition-smooth);
-}
-
-.video-placeholder .play-icon:hover {
-    transform: scale(1.1);
-    box-shadow: var(--shadow-gold-lg);
+    height: auto;
+    border-radius: var(--border-radius-lg);
 }
 
 .video-placeholder .play-icon svg {
