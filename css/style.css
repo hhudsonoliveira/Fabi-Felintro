@@ -231,6 +231,7 @@ h4 {
 p {
     font-size: 1.0625rem;
     line-height: 1.8;
+    letter-spacing: 0.02em;
 }
 
 .highlight {
@@ -272,6 +273,7 @@ p {
     color: var(--text-gray);
     font-size: 1.125rem;
     margin-top: 0.5rem;
+    letter-spacing: 0.03em;
 }
 
 .section-intro {
@@ -608,7 +610,7 @@ p {
    =================================== */
 
 .pra-quem {
-    background: #141414;
+    background: #181818;
 }
 
 .pra-quem-grid {
@@ -839,7 +841,7 @@ p {
    =================================== */
 
 .saiba-mais {
-    background: #1e1e1e;
+    background: #222222;
 }
 
 .saiba-mais-grid {
@@ -934,7 +936,7 @@ p {
    =================================== */
 
 .resultados {
-    background: #141414;
+    background: #181818;
     overflow: hidden;
 }
 
@@ -1083,11 +1085,66 @@ p {
 }
 
 /* ===================================
+   OBJEÇÕES SECTION
+   =================================== */
+
+.objecoes {
+    background: #0a0a0a;
+}
+
+.objecoes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.objecao-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--border-radius-lg);
+    padding: 40px 32px;
+    text-align: center;
+    transition: var(--transition-smooth);
+}
+
+.objecao-card:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-4px);
+}
+
+.objecao-pergunta {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 16px;
+    letter-spacing: 0.01em;
+}
+
+.objecao-pergunta::before {
+    content: '❓ ';
+}
+
+.objecao-resposta {
+    display: block;
+    font-size: 1.0625rem;
+    color: var(--accent-gold);
+    line-height: 1.6;
+}
+
+.objecao-resposta::before {
+    content: '👉 ';
+}
+
+/* ===================================
    FAQ SECTION
    =================================== */
 
 .faq {
-    background: #1e1e1e;
+    background: #222222;
 }
 
 .faq-container {
@@ -1657,6 +1714,11 @@ p {
 
     .depoimentos-grid {
         grid-template-columns: 1fr;
+    }
+
+    .objecoes-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     /* Footer Mobile */
