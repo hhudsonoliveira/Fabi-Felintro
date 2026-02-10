@@ -1392,8 +1392,8 @@ p {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    width: 60px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
     background: var(--whatsapp-green);
     border-radius: 50%;
     display: flex;
@@ -1401,18 +1401,25 @@ p {
     justify-content: center;
     box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
     z-index: 999;
-    transition: var(--transition-normal);
+    transition: var(--transition-smooth);
+    animation: whatsappPulse 2s ease-in-out infinite;
 }
 
 .whatsapp-float:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
     box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+    animation: none;
 }
 
-.whatsapp-float svg {
-    width: 28px;
-    height: 28px;
-    fill: white;
+.whatsapp-float img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+@keyframes whatsappPulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+    50% { box-shadow: 0 4px 30px rgba(37, 211, 102, 0.7), 0 0 0 10px rgba(37, 211, 102, 0.1); }
 }
 
 /* ===================================
@@ -1708,10 +1715,15 @@ p {
 
     /* WhatsApp Mobile */
     .whatsapp-float {
-        width: 54px;
-        height: 54px;
+        width: 56px;
+        height: 56px;
         bottom: 20px;
         right: 20px;
+    }
+
+    .whatsapp-float img {
+        width: 30px;
+        height: 30px;
     }
 
     /* CTA Buttons Mobile */
