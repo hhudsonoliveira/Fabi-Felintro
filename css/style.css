@@ -39,8 +39,8 @@
     --font-accent: 'Playfair Display', serif;
 
     /* Espaçamentos */
-    --section-padding: 100px;
-    --section-padding-mobile: 60px;
+    --section-padding: 120px;
+    --section-padding-mobile: 80px;
     --container-max: 1200px;
     --gap-lg: 48px;
     --gap-md: 24px;
@@ -208,7 +208,14 @@ h1 {
 
 h2 {
     font-size: clamp(2rem, 4vw, 3rem);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+    background: linear-gradient(135deg, var(--text-white) 0%, var(--accent-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 h3 {
@@ -258,7 +265,7 @@ p {
 
 .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 72px;
 }
 
 .section-subtitle {
@@ -601,7 +608,7 @@ p {
    =================================== */
 
 .pra-quem {
-    background: linear-gradient(180deg, var(--primary-black) 0%, var(--secondary-dark) 100%);
+    background: #141414;
 }
 
 .pra-quem-grid {
@@ -678,7 +685,7 @@ p {
    =================================== */
 
 .planos {
-    background: var(--tertiary-dark);
+    background: #0a0a0a;
 }
 
 .planos-grid {
@@ -832,20 +839,21 @@ p {
    =================================== */
 
 .saiba-mais {
-    background: var(--primary-black);
+    background: #1e1e1e;
 }
 
 .saiba-mais-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 60px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 48px;
 }
 
 .video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 */
+    max-width: 700px;
+    padding-bottom: min(56.25%, 394px); /* 16:9 com max */
     border-radius: var(--border-radius-lg);
     overflow: hidden;
     background: var(--secondary-dark);
@@ -895,6 +903,11 @@ p {
     margin-left: 4px;
 }
 
+.saiba-mais-content {
+    text-align: center;
+    max-width: 800px;
+}
+
 .saiba-mais-content h2 {
     margin-bottom: 0.5rem;
 }
@@ -921,7 +934,7 @@ p {
    =================================== */
 
 .resultados {
-    background: var(--secondary-dark);
+    background: #141414;
     overflow: hidden;
 }
 
@@ -1000,6 +1013,9 @@ p {
 .depoimentos-titulo {
     text-align: center;
     margin-bottom: 40px;
+    margin-top: 60px;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--accent-gold);
 }
 
 .depoimentos-grid {
@@ -1071,7 +1087,7 @@ p {
    =================================== */
 
 .faq {
-    background: var(--tertiary-dark);
+    background: #1e1e1e;
 }
 
 .faq-container {
@@ -1490,7 +1506,7 @@ p {
 
 @media (max-width: 1024px) {
     :root {
-        --section-padding: 80px;
+        --section-padding: 100px;
     }
 
     .passos-grid {
@@ -1502,8 +1518,7 @@ p {
     }
 
     .saiba-mais-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 36px;
     }
 
     .carrossel-item {
@@ -1532,7 +1547,7 @@ p {
 
 @media (max-width: 768px) {
     :root {
-        --section-padding: 60px;
+        --section-padding: 80px;
     }
 
     /* Fix: background-attachment fixed causa bug de animação no iOS/Safari */
@@ -1687,7 +1702,7 @@ p {
     }
 
     .section {
-        padding: 50px 0;
+        padding: 60px 0;
     }
 
     .hero .badge {
