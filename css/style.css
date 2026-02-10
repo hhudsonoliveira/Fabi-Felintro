@@ -937,20 +937,8 @@ p {
 .carrossel-track {
     display: flex;
     gap: 24px;
-    -webkit-animation: carrosselScroll 60s linear infinite;
-    animation: carrosselScroll 60s linear infinite;
     width: max-content;
     will-change: transform;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-}
-
-@media (hover: hover) {
-    .carrossel-track:hover {
-        animation-play-state: paused;
-    }
 }
 
 .carrossel-item {
@@ -980,27 +968,6 @@ p {
     object-fit: cover;
 }
 
-@-webkit-keyframes carrosselScroll {
-    0% {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
-    100% {
-        -webkit-transform: translate3d(-50%, 0, 0);
-        transform: translate3d(-50%, 0, 0);
-    }
-}
-
-@keyframes carrosselScroll {
-    0% {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
-    100% {
-        -webkit-transform: translate3d(-50%, 0, 0);
-        transform: translate3d(-50%, 0, 0);
-    }
-}
 
 /* Feedback em Vídeo/Áudio */
 .feedback-videos-grid {
@@ -1667,8 +1634,6 @@ p {
 
     .carrossel-track {
         gap: 16px;
-        -webkit-animation: carrosselScroll 40s linear infinite;
-        animation: carrosselScroll 40s linear infinite;
     }
 
     .feedback-videos-grid {

@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
     initScrollReveal();
     initFaqAccordion();
+    initCarrossel();
     initAnalytics();
 });
 
@@ -231,6 +232,40 @@ function initFaqAccordion() {
             }
         });
     });
+}
+
+// ===================================
+// CARROSSEL INFINITO (JavaScript)
+// ===================================
+
+function initCarrossel() {
+    var track = document.querySelector('.carrossel-track');
+    if (!track) return;
+
+    var speed = 1; // pixels por frame
+    var position = 0;
+    var paused = false;
+    var halfWidth = track.scrollWidth / 2;
+
+    // Pause no hover (apenas desktop com mouse)
+    if (window.matchMedia('(hover: hover)').matches) {
+        track.addEventListener('mouseenter', function() { paused = true; });
+        track.addEventListener('mouseleave', function() { paused = false; });
+    }
+
+    function animate() {
+        if (!paused) {
+            position -= speed;
+            // Reset quando chega na metade (itens duplicados)
+            if (Math.abs(position) >= halfWidth) {
+                position = 0;
+            }
+            track.style.transform = 'translateX(' + position + 'px)';
+        }
+        requestAnimationFrame(animate);
+    }
+
+    requestAnimationFrame(animate);
 }
 
 // ===================================
