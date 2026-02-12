@@ -39,8 +39,8 @@
     --font-accent: 'Playfair Display', serif;
 
     /* Espaçamentos */
-    --section-padding: 120px;
-    --section-padding-mobile: 80px;
+    --section-padding: 140px;
+    --section-padding-mobile: 90px;
     --container-max: 1200px;
     --gap-lg: 48px;
     --gap-md: 24px;
@@ -541,7 +541,7 @@ p {
    =================================== */
 
 .como-funciona {
-    background: var(--primary-black);
+    background: #000000;
 }
 
 .passos-grid {
@@ -610,7 +610,7 @@ p {
    =================================== */
 
 .pra-quem {
-    background: #181818;
+    background: #1c1c1c;
 }
 
 .pra-quem-grid {
@@ -687,7 +687,7 @@ p {
    =================================== */
 
 .planos {
-    background: #0a0a0a;
+    background: #000000;
 }
 
 .planos-grid {
@@ -841,7 +841,7 @@ p {
    =================================== */
 
 .saiba-mais {
-    background: #222222;
+    background: #000000;
 }
 
 .saiba-mais-grid {
@@ -906,7 +906,7 @@ p {
    =================================== */
 
 .resultados {
-    background: #181818;
+    background: #1c1c1c;
     overflow: hidden;
 }
 
@@ -1058,9 +1058,7 @@ p {
    OBJEÇÕES SECTION
    =================================== */
 
-.objecoes {
-    background: #0a0a0a;
-}
+/* .objecoes agora faz parte da seção FAQ */
 
 .objecoes-grid {
     display: grid;
@@ -1114,7 +1112,7 @@ p {
    =================================== */
 
 .faq {
-    background: #222222;
+    background: #1c1c1c;
 }
 
 .faq-container {
@@ -1423,6 +1421,25 @@ p {
 }
 
 /* ===================================
+   CTA INLINE (repetidos entre seções)
+   =================================== */
+
+.cta-inline {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 40px;
+}
+
+.cta-inline-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+}
+
+/* ===================================
    UTILITY CLASSES
    =================================== */
 
@@ -1540,7 +1557,7 @@ p {
 
 @media (max-width: 1024px) {
     :root {
-        --section-padding: 100px;
+        --section-padding: 110px;
     }
 
     .passos-grid {
@@ -1581,7 +1598,7 @@ p {
 
 @media (max-width: 768px) {
     :root {
-        --section-padding: 80px;
+        --section-padding: 90px;
     }
 
     /* Fix: background-attachment fixed causa bug de animação no iOS/Safari */
@@ -1746,7 +1763,7 @@ p {
     }
 
     .section {
-        padding: 60px 0;
+        padding: 70px 0;
     }
 
     .hero .badge {
