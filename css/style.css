@@ -990,6 +990,27 @@ p {
     color: var(--accent-gold);
 }
 
+.texto-motivacional {
+    max-width: 800px;
+    margin: 48px auto 0;
+    text-align: center;
+    padding: 40px 32px;
+    background: rgba(212, 175, 55, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: var(--border-radius-lg);
+}
+
+.texto-motivacional p {
+    color: var(--text-gray-light);
+    font-size: 1.0625rem;
+    line-height: 1.9;
+    margin-bottom: 1rem;
+}
+
+.texto-motivacional p:last-child {
+    margin-bottom: 0;
+}
+
 .depoimentos-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -2571,6 +2592,197 @@ p {
 }
 
 /* ===================================
+   PLANO DETALHE - Cards individuais
+   =================================== */
+
+.plano-detalhe {
+    padding: 60px 0;
+}
+
+.plano-detalhe:first-of-type {
+    padding-top: 80px;
+}
+
+/* Alternar fundos entre cards */
+#plano-base { background: #0a0a0a; }
+#plano-evolucao { background: #141414; }
+#plano-transformacao { background: #0a0a0a; }
+#plano-360 { background: #141414; }
+
+.plano-detalhe-card {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--secondary-dark);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.plano-detalhe-card:hover {
+    border-color: rgba(212, 175, 55, 0.25);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Variante destaque (Transformação) */
+.plano-detalhe-card.plano-detalhe-destaque {
+    border: 2px solid var(--accent-gold);
+    background: linear-gradient(180deg, rgba(212, 175, 55, 0.06) 0%, var(--secondary-dark) 30%);
+    max-width: 850px;
+}
+
+.plano-detalhe-card.plano-detalhe-destaque:hover {
+    box-shadow: 0 20px 60px rgba(212, 175, 55, 0.2);
+}
+
+/* Variante premium (365) */
+.plano-detalhe-card.plano-detalhe-premium {
+    border: 2px solid rgba(212, 175, 55, 0.5);
+    background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, var(--secondary-dark) 25%);
+    max-width: 850px;
+}
+
+.plano-detalhe-card.plano-detalhe-premium:hover {
+    border-color: var(--accent-gold);
+    box-shadow: 0 20px 60px rgba(212, 175, 55, 0.25);
+}
+
+/* Header do card */
+.plano-detalhe-header {
+    padding: 48px 48px 32px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.plano-detalhe-header h2 {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--text-white) 0%, var(--accent-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.plano-detalhe-header .plano-tipo {
+    margin-bottom: 0;
+}
+
+.plano-detalhe-header .plano-preco-destaque {
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+/* Body do card */
+.plano-detalhe-body {
+    padding: 40px 48px;
+}
+
+.plano-intro {
+    font-size: 1.125rem;
+    color: var(--text-gray-light);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.plano-detalhe-body > p {
+    color: var(--text-gray-light);
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+/* Subseções dentro do body */
+.plano-secao {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.plano-secao h4 {
+    color: var(--accent-gold);
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.plano-secao ul {
+    list-style: none;
+    padding: 0;
+}
+
+.plano-secao li {
+    position: relative;
+    padding: 8px 0 8px 24px;
+    color: var(--text-gray-light);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.plano-secao li:last-child {
+    border-bottom: none;
+}
+
+.plano-secao li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--accent-gold);
+    font-size: 0.75rem;
+    top: 11px;
+}
+
+/* Subseção destaque (ex: "Por que 6 meses mudam tudo?") */
+.plano-secao.plano-secao-destaque {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(212, 175, 55, 0.02) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: var(--border-radius);
+    padding: 32px;
+    margin-top: 32px;
+}
+
+.plano-secao.plano-secao-destaque h4 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+}
+
+.plano-secao.plano-secao-destaque > p {
+    color: var(--text-gray-light);
+    margin-bottom: 16px;
+    line-height: 1.8;
+}
+
+.plano-secao.plano-secao-destaque > p strong {
+    color: var(--accent-gold);
+}
+
+/* Renovação info */
+.plano-renovacao {
+    margin-top: 32px;
+    padding: 20px 24px;
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 3px solid var(--accent-gold);
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    color: var(--text-gray);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    font-style: italic;
+}
+
+/* Footer do card */
+.plano-detalhe-footer {
+    padding: 32px 48px 48px;
+    text-align: center;
+}
+
+.plano-detalhe-footer .btn-primary {
+    width: 100%;
+    max-width: 400px;
+    font-size: 1.125rem;
+    padding: 22px 40px;
+}
+
+/* ===================================
    RESPONSIVO - PÁGINAS NOVAS
    =================================== */
 
@@ -2620,6 +2832,27 @@ p {
     .app-downloads {
         flex-direction: column;
     }
+
+    /* Plano detalhe cards - mobile */
+    .plano-detalhe {
+        padding: 40px 0;
+    }
+
+    .plano-detalhe-header {
+        padding: 32px 24px 24px;
+    }
+
+    .plano-detalhe-body {
+        padding: 28px 24px;
+    }
+
+    .plano-detalhe-footer {
+        padding: 24px 24px 36px;
+    }
+
+    .plano-secao.plano-secao-destaque {
+        padding: 24px 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2633,5 +2866,17 @@ p {
 
     .plano-preco-destaque .valor {
         font-size: 2.5rem;
+    }
+
+    .plano-detalhe-header {
+        padding: 28px 20px 20px;
+    }
+
+    .plano-detalhe-body {
+        padding: 24px 20px;
+    }
+
+    .plano-detalhe-footer {
+        padding: 20px 20px 32px;
     }
 }
