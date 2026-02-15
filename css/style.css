@@ -720,19 +720,19 @@ p {
     border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
-/* Card do Plano 360 */
-.plano-card.plano-360 {
+/* Card do Plano 365 */
+.plano-card.plano-365 {
     background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, var(--secondary-dark) 100%);
     border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
-.plano-card.plano-360:hover {
+.plano-card.plano-365:hover {
     border-color: var(--accent-gold);
     box-shadow: 0 20px 60px rgba(212, 175, 55, 0.15);
 }
 
 /* Badge 360 */
-.badge-popular.badge-360 {
+.badge-popular.badge-365 {
     background: linear-gradient(135deg, #D4AF37 0%, #8B7025 100%);
     font-size: 0.65rem;
     padding: 6px 12px;
@@ -2021,7 +2021,7 @@ p {
     padding: 4px 0;
 }
 
-/* Card Premium 360 */
+/* Card Premium 365 */
 .plano-page-card.plano-premium-360 {
     background: linear-gradient(180deg, rgba(212, 175, 55, 0.1) 0%, var(--secondary-dark) 100%);
     border: 2px solid rgba(212, 175, 55, 0.4);
@@ -2032,8 +2032,8 @@ p {
     box-shadow: 0 20px 60px rgba(212, 175, 55, 0.25);
 }
 
-/* Badge 360 na página */
-.badge-popular.badge-360 {
+/* Badge 365 na página */
+.badge-popular.badge-365 {
     background: linear-gradient(135deg, #D4AF37 0%, #8B7025 100%);
 }
 
@@ -2619,7 +2619,7 @@ p {
 #plano-base { background: #0a0a0a; }
 #plano-evolucao { background: #141414; }
 #plano-transformacao { background: #0a0a0a; }
-#plano-360 { background: #141414; }
+#plano-365 { background: #141414; }
 
 .plano-detalhe-card {
     max-width: 800px;
