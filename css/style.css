@@ -493,12 +493,17 @@ p {
     z-index: 1;
 }
 
-.hero-content {
+.hero .hero-content {
     position: relative;
     z-index: 2;
     text-align: left;
     max-width: 600px;
     padding: 0 24px 0 60px;
+    margin: 0;
+}
+
+.hero h1 .highlight {
+    display: inline;
 }
 
 .hero .badge {
@@ -519,15 +524,15 @@ p {
 
 .hero h1 {
     color: var(--text-white);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
     margin-bottom: 1.5rem;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     overflow-wrap: break-word;
-    word-break: break-word;
 }
 
 .hero p {
     color: rgba(255, 255, 255, 0.9);
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     margin-bottom: 2.5rem;
     font-weight: 400;
     overflow-wrap: break-word;
