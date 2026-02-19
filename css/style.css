@@ -483,13 +483,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.85) 0%,
-        rgba(0, 0, 0, 0.55) 45%,
-        rgba(0, 0, 0, 0.2) 70%,
-        rgba(0, 0, 0, 0.15) 100%
-    );
+    background: rgba(0, 0, 0, 0.30);
     z-index: 1;
 }
 
@@ -908,6 +902,25 @@ p {
 
 .saiba-mais-content .btn-secondary {
     margin-top: 1rem;
+}
+
+.minha-transformacao {
+    text-align: center;
+    margin-top: 48px;
+}
+
+.minha-transformacao h3 {
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    margin-bottom: 0.5rem;
+}
+
+.minha-transformacao .subtitle {
+    color: var(--accent-gold);
+    font-family: var(--font-accent);
+    font-size: 1rem;
+    font-style: italic;
+    margin-top: 12px;
 }
 
 /* ===================================
