@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initFaqAccordion();
     initCarrossel();
     initAnalytics();
+    initWhatsappInteligente();
 });
 
 // ===================================
@@ -375,6 +376,49 @@ function isInViewport(element) {
         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
+}
+
+// ===================================
+// WHATSAPP FLUTUANTE INTELIGENTE
+// ===================================
+
+function initWhatsappInteligente() {
+    const whatsappFloat = document.querySelector('.whatsapp-float');
+    if (!whatsappFloat) return;
+
+    const planos = [
+        { id: 'plano-base',         texto: 'Olá! Vim pelo site e quero saber mais sobre o Plano Base' },
+        { id: 'plano-evolucao',     texto: 'Olá! Vim pelo site e quero saber mais sobre o Plano Evolução' },
+        { id: 'plano-transformacao',texto: 'Olá! Vim pelo site e quero saber mais sobre o Plano Transformação' },
+        { id: 'plano-365',          texto: 'Olá! Vim pelo site e quero saber mais sobre o Projeto Evolução Física 365' }
+    ];
+
+    const textoPadrao = 'Olá! Vim pelo site e tenho uma dúvida sobre os planos';
+    const numeroWA = '5511953532718';
+
+    const secoes = planos
+        .map(p => ({ ...p, el: document.getElementById(p.id) }))
+        .filter(p => p.el);
+
+    if (secoes.length === 0) return;
+
+    function atualizarLink() {
+        const meio = window.innerHeight / 2;
+        let textoAtual = textoPadrao;
+
+        for (const secao of secoes) {
+            const rect = secao.el.getBoundingClientRect();
+            if (rect.top <= meio && rect.bottom >= meio) {
+                textoAtual = secao.texto;
+                break;
+            }
+        }
+
+        whatsappFloat.href = 'https://wa.me/' + numeroWA + '?text=' + encodeURIComponent(textoAtual);
+    }
+
+    atualizarLink();
+    window.addEventListener('scroll', throttle(atualizarLink, 100));
 }
 
 // ===================================

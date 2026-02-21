@@ -2825,6 +2825,32 @@ p {
     font-style: italic;
 }
 
+/* Valor CTA destaque */
+.plano-valor-cta {
+    margin-top: 20px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--accent-gold);
+}
+
+/* Botão WhatsApp específico por plano */
+.btn-whatsapp-plano {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    color: #25D366;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+}
+.btn-whatsapp-plano:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
 /* Footer do card */
 .plano-detalhe-footer {
     padding: 32px 48px 48px;
