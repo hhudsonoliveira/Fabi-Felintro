@@ -390,7 +390,7 @@ function initWhatsappInteligente() {
         { id: 'plano-base',         texto: 'Olá! Vim pelo site e quero saber mais sobre o Plano Base' },
         { id: 'plano-evolucao',     texto: 'Olá! Vim pelo site e quero saber mais sobre o Plano Evolução' },
         { id: 'plano-transformacao',texto: 'Olá! Vim pelo site e quero saber mais sobre o Plano Transformação' },
-        { id: 'plano-365',          texto: 'Olá! Vim pelo site e quero saber mais sobre o Projeto Evolução Física 365' }
+        { id: 'plano-365',          texto: 'Olá! Vim pelo site e quero saber mais sobre o Plano Evolução Física 365' }
     ];
 
     const textoPadrao = 'Olá! Vim pelo site e tenho uma dúvida sobre os planos';

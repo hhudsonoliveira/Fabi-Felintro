@@ -845,6 +845,7 @@ p {
 
 .saiba-mais {
     background: #000000;
+    padding-top: 80px;
 }
 
 .saiba-mais-grid {
@@ -1475,6 +1476,11 @@ p {
     text-align: center;
     margin-top: 60px;
     padding-top: 40px;
+}
+
+.cta-entre-secoes {
+    text-align: center;
+    padding: 48px 20px;
 }
 
 .cta-inline-title {
