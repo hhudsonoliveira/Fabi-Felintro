@@ -28,14 +28,14 @@ function initPreloader() {
     const preloader = document.getElementById('preloader');
     if (!preloader) return;
 
-    // Espera a animação do preloader e depois faz fade out
+    // Fade out rápido para não bloquear LCP
     setTimeout(function() {
         preloader.classList.add('fade-out');
         // Remove do DOM após a transição
         preloader.addEventListener('transitionend', function() {
             preloader.remove();
         });
-    }, 2200);
+    }, 300);
 }
 
 // ===================================
@@ -122,7 +122,7 @@ function initMobileMenu() {
 
 function initSmoothScroll() {
     const links = document.querySelectorAll('a[href^="#"]');
-    const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 80;
+    const navbarHeight = 80; // valor fixo evita forced reflow no carregamento
 
     links.forEach(link => {
         link.addEventListener('click', function(e) {
