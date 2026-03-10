@@ -56,8 +56,8 @@ function initNavbar() {
         }
     }
 
-    // Executar no load e no scroll
-    handleScroll();
+    // Executar no load e no scroll (rAF evita forced reflow na inicialização)
+    requestAnimationFrame(handleScroll);
     window.addEventListener('scroll', debounce(handleScroll, 10));
 }
 
@@ -246,7 +246,7 @@ function initCarrossel() {
     var speed = 1; // pixels por frame
     var position = 0;
     var paused = false;
-    var halfWidth = track.scrollWidth / 2;
+    var halfWidth = 0;
 
     // Pause no hover (apenas desktop com mouse)
     if (window.matchMedia('(hover: hover)').matches) {
@@ -255,10 +255,14 @@ function initCarrossel() {
     }
 
     function animate() {
+        // Lê scrollWidth apenas uma vez, depois que o layout estiver pronto
+        if (halfWidth === 0) {
+            halfWidth = track.scrollWidth / 2;
+        }
         if (!paused) {
             position -= speed;
             // Reset quando chega na metade (itens duplicados)
-            if (Math.abs(position) >= halfWidth) {
+            if (halfWidth > 0 && Math.abs(position) >= halfWidth) {
                 position = 0;
             }
             track.style.transform = 'translateX(' + position + 'px)';
