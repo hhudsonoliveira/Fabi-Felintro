@@ -96,6 +96,20 @@
 </IfModule>
 
 # ------------------------------
+# URLs amigáveis (Clean URLs)
+# ------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redireciona a URL antiga /lombar.html para a URL limpa (301)
+    RewriteCond %{THE_REQUEST} \s/+lombar\.html[\s?] [NC]
+    RewriteRule ^ /protocolo-lombar [R=301,L]
+
+    # Serve lombar.html no endereço /protocolo-lombar
+    RewriteRule ^protocolo-lombar/?$ lombar.html [L]
+</IfModule>
+
+# ------------------------------
 # Força HTTPS
 # Hostinger: ative pelo painel hPanel → SSL → Force HTTPS
 # Se preferir via .htaccess, descomente abaixo:
