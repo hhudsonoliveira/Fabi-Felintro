@@ -744,6 +744,7 @@
     .video-player { text-align: center; margin: 0 auto; }
     .video-player video { width: 100%; max-width: 760px; height: auto; max-height: 80vh; display: inline-block; border-radius: var(--radius-lg); box-shadow: var(--shadow-dark); border: 1px solid rgba(212,175,55,.25); background: #000; }
     .video-player.compact video { max-width: 460px; }
+    .video-caption { text-align: center; color: var(--gray-1); font-size: .9rem; margin-top: 14px; font-style: italic; }
     </style>
 
     <!-- CSS completo não-bloqueante -->
@@ -765,6 +766,66 @@
             "url": "https://pay.hotmart.com/H100616251S"
         },
         "seller": { "@type": "Person", "name": "Fabi Felintro" }
+    }
+    </script>
+
+    <!-- Dados estruturados: FAQ (apenas perguntas operacionais; as de saude ficam de fora ate aprovacao) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Nunca treinei. Consigo acompanhar?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Sim. Os exercícios foram organizados de forma simples e progressiva, do básico ao mais avançado, para você começar com segurança mesmo sem experiência." }
+            },
+            {
+                "@type": "Question",
+                "name": "Posso fazer em casa? Preciso de equipamentos?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Sim, dá para fazer em casa, em qualquer lugar. Não precisa de equipamentos — a maior parte dos exercícios usa apenas o peso do próprio corpo." }
+            },
+            {
+                "@type": "Question",
+                "name": "Quanto tempo terei acesso?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Você terá acesso ao protocolo por 12 meses, podendo assistir às aulas quantas vezes quiser, no seu ritmo." }
+            },
+            {
+                "@type": "Question",
+                "name": "Quanto tempo dura cada prática?",
+                "acceptedAnswer": { "@type": "Answer", "text": "As aulas são objetivas e se encaixam facilmente na rotina, de 5 a 10 minutos." }
+            },
+            {
+                "@type": "Question",
+                "name": "E se eu não gostar?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Você conta com a garantia de 7 dias da Hotmart. Se não for para você, é só solicitar o reembolso." }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Dados estruturados: videos da pagina -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "VideoObject",
+                "name": "Apresentação — Protocolo da Lombar Saudável",
+                "description": "Fabi Felintro apresenta o Protocolo da Lombar Saudável: um método simples com respiração, alongamento, mobilidade e fortalecimento para cuidar da lombar em casa.",
+                "thumbnailUrl": "https://fabifelintro.com/img/Lombar.webp",
+                "uploadDate": "2026-07-18",
+                "contentUrl": "https://fabifelintro.com/assets/video-apresentacao.mp4"
+            },
+            {
+                "@type": "VideoObject",
+                "name": "Depoimento — Protocolo da Lombar Saudável",
+                "description": "Depoimento real de quem já fez o Protocolo da Lombar Saudável e voltou a se movimentar com mais liberdade e menos dor.",
+                "thumbnailUrl": "https://fabifelintro.com/img/Lombar.webp",
+                "uploadDate": "2026-07-18",
+                "contentUrl": "https://fabifelintro.com/assets/video-depoimento.mp4"
+            }
+        ]
     }
     </script>
 </head>
@@ -934,7 +995,7 @@
 
         <div class="prof-badge reveal">
             <span class="pb-icon">🎓</span>
-            <p>Você será orientada por uma profissional com <strong>mais de 10 anos de experiência</strong> ajudando pessoas a se movimentarem melhor e com menos dor.</p>
+            <p>Você terá a orientação de uma profissional com <strong>mais de 10 anos de experiência</strong> ajudando pessoas a se movimentarem melhor e com menos dor.</p>
         </div>
     </div>
 </section>
@@ -1039,7 +1100,7 @@
                 Seu navegador não suporta a reprodução de vídeo.
             </video>
         </div>
-        <p class="placeholder-note">📎 Mais depoimentos, prints e avaliações serão adicionados aqui em breve.</p>
+        <p class="video-caption">🎥 Depoimento real de quem já fez o protocolo.</p>
         <div class="section-cta reveal">
             <a href="https://pay.hotmart.com/H100616251S?bid=1781640020905" class="btn btn-gold xl" target="_blank" rel="noopener noreferrer">Quero ter esse resultado também</a>
         </div>
@@ -1047,30 +1108,11 @@
 </section>
 
 <!-- ============================================================
-     CASOS REAIS  (placeholder — aguardando materiais)
+     CASOS REAIS — seção oculta até a Fabi enviar histórias reais.
+     Reativar quando houver conteúdo: remontar a seção de casos no
+     formato "Antes / Virada / Hoje". O CSS (.casos-list e .caso-card)
+     continua no estilo, então é só recriar o bloco.
 ============================================================ -->
-<section class="section" id="casos">
-    <div class="container">
-        <div class="sec-header reveal">
-            <h2>Casos <span class="highlight">reais</span></h2>
-            <p>Histórias completas de quem transformou a relação com a própria lombar</p>
-        </div>
-        <div class="casos-list">
-            <!-- SUBSTITUIR: cada card é uma história completa de aluno (antes / processo / depois). -->
-            <div class="caso-card reveal">
-                <div class="caso-meta">História de aluno</div>
-                <h3>[Título da história]</h3>
-                <p>[Espaço reservado para a história completa do aluno. Envie o conteúdo que eu formato aqui.]</p>
-            </div>
-            <div class="caso-card reveal">
-                <div class="caso-meta">História de aluno</div>
-                <h3>[Título da história]</h3>
-                <p>[Espaço reservado para a história completa do aluno. Envie o conteúdo que eu formato aqui.]</p>
-            </div>
-        </div>
-        <p class="placeholder-note">📎 Área pronta para as histórias completas. Envie os relatos (e fotos, se houver) que eu monto os casos.</p>
-    </div>
-</section>
 
 <!-- ============================================================
      CONTEÚDO DO PROTOCOLO — ACCORDION
@@ -1180,7 +1222,7 @@
     <div class="container">
         <div class="sec-header reveal">
             <h2>Este protocolo é para você?</h2>
-            <p>Seja honesta com a sua situação e descubra se estamos no caminho certo</p>
+            <p>Avalie a sua situação com sinceridade e descubra se estamos no caminho certo</p>
         </div>
 
         <div class="pra-quem-grid">
@@ -1258,7 +1300,7 @@
 
                 <a href="https://pay.hotmart.com/H100616251S?bid=1781640020905"
                    class="btn btn-gold" target="_blank" rel="noopener noreferrer">
-                    Quero ser orientada pela Fabi
+                    Quero a orientação da Fabi
                 </a>
             </div>
         </div>
@@ -1330,7 +1372,7 @@
             </div>
             <h2>Garantia de 7 dias</h2>
             <p>
-                Se dentro de 7 dias após a compra você não estiver satisfeita com o conteúdo, basta solicitar o reembolso diretamente pela Hotmart. Devolução de 100% do valor investido, sem burocracia, sem perguntas. O risco é zero — a decisão é sua.
+                Se dentro de 7 dias após a compra o conteúdo não for para você, basta solicitar o reembolso diretamente pela Hotmart. Devolução de 100% do valor investido, sem burocracia, sem perguntas. O risco é zero — a decisão é sua.
             </p>
         </div>
     </div>
