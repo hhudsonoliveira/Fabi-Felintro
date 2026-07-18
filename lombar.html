@@ -739,6 +739,11 @@
     @media (max-width: 768px) {
         .provas-grid { grid-template-columns: 1fr; }
     }
+
+    /* Player de vídeo (apresentação + depoimento) */
+    .video-player { text-align: center; margin: 0 auto; }
+    .video-player video { width: 100%; max-width: 760px; height: auto; max-height: 80vh; display: inline-block; border-radius: var(--radius-lg); box-shadow: var(--shadow-dark); border: 1px solid rgba(212,175,55,.25); background: #000; }
+    .video-player.compact video { max-width: 460px; }
     </style>
 
     <!-- CSS completo não-bloqueante -->
@@ -917,8 +922,15 @@
 ============================================================ -->
 <section class="section video-section" id="video">
     <div class="container">
-        <!-- VÍDEO DE APRESENTAÇÃO: a Fabi vai enviar depois. Quando chegar, inserir aqui:
-             <div class="video-frame"><iframe src="https://www.youtube.com/embed/ID_DO_VIDEO" title="Apresentação — Protocolo da Lombar" allowfullscreen></iframe></div> -->
+        <div class="sec-header reveal">
+            <h2>Assista à <span class="highlight">apresentação</span></h2>
+        </div>
+        <div class="video-player reveal">
+            <video controls preload="metadata" playsinline poster="img/Lombar.webp">
+                <source src="assets/video-apresentacao.mp4" type="video/mp4">
+                Seu navegador não suporta a reprodução de vídeo.
+            </video>
+        </div>
 
         <div class="prof-badge reveal">
             <span class="pb-icon">🎓</span>
@@ -1021,25 +1033,13 @@
             <h2>Quem já cuidou da <span class="highlight">lombar</span></h2>
             <p>Depoimentos, avaliações e resultados reais de alunos</p>
         </div>
-        <div class="provas-grid">
-            <!-- SUBSTITUIR: cada card pode virar um print (img), vídeo, avaliação do Google/WhatsApp ou depoimento escrito. -->
-            <div class="prova-card reveal">
-                <div class="prova-stars">★★★★★</div>
-                <p class="prova-quote">[Espaço reservado para depoimento — texto, print ou vídeo será inserido aqui.]</p>
-                <div class="prova-autor"><span class="prova-avatar">A</span><div><strong>Nome do aluno</strong><span>Aluno do Protocolo</span></div></div>
-            </div>
-            <div class="prova-card reveal">
-                <div class="prova-stars">★★★★★</div>
-                <p class="prova-quote">[Espaço reservado para depoimento — texto, print ou vídeo será inserido aqui.]</p>
-                <div class="prova-autor"><span class="prova-avatar">B</span><div><strong>Nome do aluno</strong><span>Aluno do Protocolo</span></div></div>
-            </div>
-            <div class="prova-card reveal">
-                <div class="prova-stars">★★★★★</div>
-                <p class="prova-quote">[Espaço reservado para depoimento — texto, print ou vídeo será inserido aqui.]</p>
-                <div class="prova-autor"><span class="prova-avatar">C</span><div><strong>Nome do aluno</strong><span>Aluno do Protocolo</span></div></div>
-            </div>
+        <div class="video-player compact reveal">
+            <video controls preload="metadata" playsinline>
+                <source src="assets/video-depoimento.mp4" type="video/mp4">
+                Seu navegador não suporta a reprodução de vídeo.
+            </video>
         </div>
-        <p class="placeholder-note">📎 Área pronta para receber vídeos, prints, avaliações do Google e do WhatsApp e depoimentos escritos. É só me enviar os materiais que eu insiro aqui.</p>
+        <p class="placeholder-note">📎 Mais depoimentos, prints e avaliações serão adicionados aqui em breve.</p>
         <div class="section-cta reveal">
             <a href="https://pay.hotmart.com/H100616251S?bid=1781640020905" class="btn btn-gold xl" target="_blank" rel="noopener noreferrer">Quero ter esse resultado também</a>
         </div>

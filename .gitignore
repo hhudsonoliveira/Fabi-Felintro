@@ -15,3 +15,9 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# Vídeos pesados (enviar direto para a Hostinger, não versionar)
+assets/*.mp4
+
+# Dependências
+node_modules/
