@@ -3,7 +3,7 @@
 
 User-agent: *
 Allow: /
-Disallow: /obrigado.html
-Disallow: /lombar-preview.html
+Disallow: /obrigado
+Disallow: /lombar-preview
 
 Sitemap: https://fabifelintro.com/sitemap.xml

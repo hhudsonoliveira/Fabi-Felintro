@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
     initScrollReveal();
     initFaqAccordion();
+    initSeletorPeriodo();
     initCarrossel();
     initAnalytics();
     initWhatsappInteligente();
@@ -236,6 +237,49 @@ function initFaqAccordion() {
 }
 
 // ===================================
+// SELETOR DE PERÍODO (Assessoria Online Premium)
+// ===================================
+
+function initSeletorPeriodo() {
+    const seletores = document.querySelectorAll('[data-periodo-seletor]');
+
+    seletores.forEach(seletor => {
+        const tabs = Array.from(seletor.querySelectorAll('[role="tab"]'));
+        const paineis = tabs.map(tab => document.getElementById(tab.getAttribute('aria-controls')));
+
+        if (tabs.length === 0 || paineis.includes(null)) return;
+
+        // Cada painel tem o próprio botão de checkout, então trocar de aba já troca o link do CTA
+        function selecionar(index, focar) {
+            tabs.forEach((tab, i) => {
+                const ativo = i === index;
+                tab.setAttribute('aria-selected', ativo);
+                tab.tabIndex = ativo ? 0 : -1;
+                paineis[i].hidden = !ativo;
+            });
+            if (focar) tabs[index].focus();
+        }
+
+        tabs.forEach((tab, i) => {
+            tab.addEventListener('click', () => selecionar(i, false));
+
+            // Navegação por teclado entre as abas
+            tab.addEventListener('keydown', function(e) {
+                let novo = null;
+                if (e.key === 'ArrowRight') novo = (i + 1) % tabs.length;
+                if (e.key === 'ArrowLeft') novo = (i - 1 + tabs.length) % tabs.length;
+                if (e.key === 'Home') novo = 0;
+                if (e.key === 'End') novo = tabs.length - 1;
+                if (novo !== null) {
+                    e.preventDefault();
+                    selecionar(novo, true);
+                }
+            });
+        });
+    });
+}
+
+// ===================================
 // CARROSSEL INFINITO (JavaScript)
 // ===================================
 
@@ -391,10 +435,8 @@ function initWhatsappInteligente() {
     if (!whatsappFloat) return;
 
     const planos = [
-        { id: 'plano-base',         texto: 'Olá! Vim pelo site e quero saber mais sobre o Plano Base' },
-        { id: 'plano-evolucao',     texto: 'Olá! Vim pelo site e quero saber mais sobre o Plano Evolução' },
-        { id: 'plano-transformacao',texto: 'Olá! Vim pelo site e quero saber mais sobre o Plano Transformação' },
-        { id: 'plano-365',          texto: 'Olá! Vim pelo site e quero saber mais sobre o Plano Evolução Física 365' }
+        { id: 'plano-basic',   texto: 'Olá! Vim pelo site e quero saber mais sobre o Plano Basic' },
+        { id: 'plano-premium', texto: 'Olá! Vim pelo site e quero saber mais sobre a Assessoria Online Premium' }
     ];
 
     const textoPadrao = 'Olá! Vim pelo site e tenho uma dúvida sobre os planos';
