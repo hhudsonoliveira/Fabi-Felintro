@@ -481,4 +481,4 @@ window.addEventListener('error', function(event) {
 
 console.log('%c✨ Site Fabi Felintro Trainer', 'color: #D4AF37; font-size: 20px; font-weight: bold;');
 console.log('%cDesign premium • Preto + Dourado', 'color: #888; font-size: 12px;');
-console.log('%cDesenvolvido por HO DEVWEB', 'color: #666; font-size: 11px;');
+console.log('%cDesenvolvido por Livson Tecnologia', 'color: #666; font-size: 11px;');
